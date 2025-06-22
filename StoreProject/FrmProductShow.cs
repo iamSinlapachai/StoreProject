@@ -145,8 +145,32 @@ namespace StoreProject
 
         private void btnFrmProductCreate_Click(object sender, EventArgs e)
         {
-            FrmProductCreate frm = new FrmProductCreate();
-            frm.Show();
+            //เปิด Form FrmProductCreate ขึ้นมา แบบ Dialog
+            //create a new instance of FrmProductCreate
+            FrmProductCreate frmProductCreate = new FrmProductCreate();
+            //show the form
+            //frmProductCreate.Show();
+            //show the form as dialog
+            frmProductCreate.ShowDialog(); //ถ้าใช้ ShowDialog จะไม่สามารถเปิด Form อื่นได้จนกว่าจะปิด Form นี้
+            getAllProductToLV();
+        }
+
+        private void lvAllProduct_ItemActivate(object sender, EventArgs e)
+        {
+            //every time user double click on item in ListView Oepen FrmProductUpDel
+            //with data from selected item in dialog form
+
+            FrmProductUpDel frmPoductUpDel = new FrmProductUpDel(
+            int.Parse(lvAllProduct.SelectedItems[0].SubItems[1].Text) //get proId from selected item
+
+
+
+             );
+            frmPoductUpDel.ShowDialog();
+            getAllProductToLV();
+
+
+
         }
     }
 }

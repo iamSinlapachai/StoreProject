@@ -53,6 +53,7 @@
             this.lvAllProduct.Size = new System.Drawing.Size(720, 249);
             this.lvAllProduct.TabIndex = 1;
             this.lvAllProduct.UseCompatibleStateImageBehavior = false;
+            this.lvAllProduct.ItemActivate += new System.EventHandler(this.lvAllProduct_ItemActivate);
             // 
             // label2
             // 
